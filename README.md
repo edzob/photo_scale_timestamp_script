@@ -13,6 +13,10 @@ This script is using 'convert' which is part of 'imagemagick'
 ```convert -version```
 ```identify -version```
 
+## List fonts
+```fc-list | grep -i arial```
+```convert -list font|grep Liberation-Sans```
+
 # Used resources
 ## CONVERT
 1. https://legacy.imagemagick.org/Usage/annotating/
@@ -21,12 +25,15 @@ This script is using 'convert' which is part of 'imagemagick'
 
 ## ImageMagick
 1. https://github.com/ImageMagick/ImageMagick
-1. https://techpiezo.com/linux/install-imagemagick-in-ubuntu-20-04-lts/
+1. https://techpiezo.com/linux/install-imagemagick-in-ubuntu-20-04-lts
 
 ## BASH
-1.  https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html
+1. https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html
 1. https://tldp.org/LDP/abs/html/varassignment.html
-1. https://www.cyberciti.biz/faq/bash-loop-over-file/
+1. https://www.cyberciti.biz/faq/bash-loop-over-file
+1. https://linuxize.com/post/bash-concatenate-strings
+1. https://en.wikibooks.org/wiki/Cut
+1. https://www.geeksforgeeks.org/date-command-linux-examples/
 
 ## CODE
 1.  https://ubuntuforums.org/showthread.php?t=1235238
@@ -47,7 +54,9 @@ This script is using 'convert' which is part of 'imagemagick'
 ```:: Add the date the photo was taken to the image ```
 ``` convert %1 -pointsize 20 -fill black -gravity northwest ^```
 ``` -annotate +0+0 "Date: %DateTime%" "%~p1date_%~n1.jpg"```
+
 ``` convert fotosin\*.jpg -font Arial -pointsize 32 -fill white -annotate +30+50 %[exif:DateTimeOriginal] \fotosout```
 
 # LICENSE
 CC BY-SA 4.0
+https://github.com/edzob/photo_scale_timestamp_script
