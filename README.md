@@ -7,6 +7,7 @@ This is done via one of these scripts:
 
 This script is using:
 1. 'convert' and 'identify', which is part of 'imagemagick'.
+1. 'date' function/application.
 1. 'tr', 'echo', 'cut', which is part of bash.
 1. the font Roboto, which you can replace in the script by another.
 
@@ -26,7 +27,7 @@ This script is using:
 
 ## Used resources
 ### On CONVERT
-1. https://legacy.imagemagick.org/Usage/annotating/
+1. https://legacy.imagemagick.org/Usage/annotating
 1. https://legacy.imagemagick.org/Usage/draw/#annotate
 1. https://legacy.imagemagick.org/script/command-line-options.php?#annotate
 
@@ -35,7 +36,7 @@ This script is using:
 
 ### On ImageMagick
 1. https://github.com/ImageMagick/ImageMagick
-1. https://techpiezo.com/linux/install-imagemagick-in-ubuntu-20-04-lts
+1. https://techpiezo.com/linuxinstall-imagemagick-in-ubuntu-20-04-lts
 
 ### On BASH
 1. https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html
@@ -43,7 +44,9 @@ This script is using:
 1. https://www.cyberciti.biz/faq/bash-loop-over-file
 1. https://linuxize.com/post/bash-concatenate-strings
 1. https://en.wikibooks.org/wiki/Cut
-1. https://www.geeksforgeeks.org/date-command-linux-examples/
+1. https://www.geeksforgeeks.org/date-command-linux-examples
+1. https://www.cyberciti.biz/faq/check-if-a-directory-exists-in-linux-or-unix-shell
+1. https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript
 
 ### On CODE
 #### in regards to Timestamp
@@ -57,7 +60,7 @@ This script is using:
 1. https://stackoverflow.com/questions/8707694/batch-resize-images-into-new-folder-using-imagemagick
 1. https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width
 1. https://askubuntu.com/questions/1068850/resize-multiple-images-with-imagemagick-from-a-folder-to-other-and-keep-the-nam
-1. https://gordonlesti.com/imagemagick-resize-all-images-in-a-directory/
+1. https://gordonlesti.com/imagemagick-resize-all-images-in-a-directory
 1. https://legacy.imagemagick.org/Usage/resize/#sample
 1. https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width
 1. https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width
