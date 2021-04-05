@@ -1,9 +1,11 @@
 # Timestamp and scale all the images.
 
-***photo_scale_timestamp_script***
+This is done via one of these scripts:
+1. ***timestamp.sh***
+1. ***ttimestamp-rescale.sh***
 
 
-This script is using 
+This script is using:
 1. 'convert' and 'identify', which is part of 'imagemagick'.
 1. 'tr', 'echo', 'cut', which is part of bash.
 1. the font Roboto, which you can replace in the script by another.
