@@ -11,6 +11,12 @@ This script is using:
 1. 'tr', 'echo', 'cut', which is part of bash.
 1. the font Roboto, which you can replace in the script by another.
 
+## Backlog
+1. count input files
+1. count timestamped files
+1. count scaled files
+1. start, stop, duration time feedback
+
 **You need to install imagemagick.**
 
 ## install
