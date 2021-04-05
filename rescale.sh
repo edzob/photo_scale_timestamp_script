@@ -1,10 +1,13 @@
 #!/bin/bash
 
-photo="*.jpg"
+intput_format=".png"
+photo="*${intput_format}"
+
 indir="./photo_timestamp/" 
 outdir="./photo_scaled/"
 files=$indir$photo
-scale="[250x]"
+
+scale="[350x]"
 
       #Check if input dir exists, else quit.
 DIR="${indir}"
