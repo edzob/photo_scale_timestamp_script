@@ -1,4 +1,6 @@
-# photo_scale_timestamp_script
+# Timestamp and scale all the images.
+
+***photo_scale_timestamp_script***
 
 
 This script is using 
