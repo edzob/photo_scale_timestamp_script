@@ -1,3 +1,4 @@
 photo_in/
 photo_scaled/
 photo_timestamp/
+rsync-photo_in.sh
