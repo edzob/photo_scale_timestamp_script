@@ -1,11 +1,11 @@
 # Timestamp and scale all the images.
 
 This is done via one of these scripts:
-1. ***timestamp.sh***
-1. ***ttimestamp-rescale.sh***
+1. ***timestamp.sh***, to add a timestamp from the EXIF data to the image.
+1. ***timestamp-rescale.sh***, to scale an image into a smaller image.
+1. ***upload2google.sh***, to upload the dir to a specific google drive location.
 
-
-This script is using:
+These scripts is using:
 1. 'convert' and 'identify', which is part of 'imagemagick'.
 1. 'date' function/application.
 1. 'tr', 'echo', 'cut', which is part of bash.
@@ -71,8 +71,15 @@ This script is using:
 1. https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width
 1. https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width
 
-### FONT
+### on FONT
 1. https://askubuntu.com/questions/673615/imagemagick-convert-command-cannot-use-fonts
+
+
+### on Google drive
+1. https://techstreams.medium.com/git-google-drive-simple-git-host-3a84db4fc1fd
+1. https://github.com/labbots/google-drive-upload
+1. https://towardsdatascience.com/uploading-files-to-google-drive-directly-from-the-terminal-using-curl-2b89db28bb06
+
 
 ## Example code
 ### of Timestamp
