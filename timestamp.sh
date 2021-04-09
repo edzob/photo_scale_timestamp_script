@@ -14,6 +14,7 @@ indir="./photo_in/"
 outdir="./photo_timestamp/"
 files=$indir$photo
 
+_start_time=$SECONDS
 _start=1
 _end=100
 _end=${#files[@]}
@@ -34,11 +35,11 @@ function ProgressBar {
 # Build progressbar string lengths
     _fill=$(printf "%${_done}s")
     _empty=$(printf "%${_left}s")
-
+    _progress_time=$(($SECONDS - $_start_time))
 # 1.2 Build progressbar strings and print the ProgressBar line
 # 1.2.1 Output example:                           
 # 1.2.1.1 Progress : [########################################] 100%
-printf "\rProgress : [${_fill// /#}${_empty// /-}] ${_progress}%%"
+printf "\rProgress : [${_fill// /#}${_empty// /-}] ${_progress}%% ${_progress_time} seconds running"
 
 }
 ################################################################
@@ -68,7 +69,7 @@ fi
 ################################################################
 
 
-echo "Adding timestamp to all the images.";
+echo "Adding timestamp to all (${_end}) the images.";
 for file in $files ; do
 
       ProgressBar ${number} ${_end}
@@ -99,6 +100,8 @@ for file in $files ; do
    ((number=number+1))
 done
 printf '\nadding timestamp is Finished!\n'
+progress_time=$(($SECONDS - $_start_time))
+echo "This took ${progress_time} seconds."
 
 # LICENSE
     ## CC BY-SA 4.0
