@@ -54,6 +54,12 @@ These scripts is using:
 1. https://www.cyberciti.biz/faq/check-if-a-directory-exists-in-linux-or-unix-shell
 1. https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript
 
+#### in regards to Progress bar
+1. https://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script
+1. https://stackoverflow.com/questions/12498304/using-bash-to-display-a-progress-indicator
+1. https://stackoverflow.com/questions/38339434/making-simple-shell-progress-bar
+1. https://stackoverflow.com/questions/23630501/how-to-progress-bar-in-bash
+
 ### On CODE
 #### in regards to Timestamp
 1.  https://ubuntuforums.org/showthread.php?t=1235238

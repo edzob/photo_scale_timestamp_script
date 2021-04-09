@@ -14,6 +14,36 @@ indir="./photo_in/"
 outdir="./photo_timestamp/"
 files=$indir$photo
 
+_start=1
+_end=100
+_end=${#files[@]}
+number=${_start}
+
+
+
+################################################################
+################################################################
+### from https://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script
+# 1. Create ProgressBar function
+# 1.1 Input is currentState($1) and totalState($2)
+function ProgressBar {
+# Process data
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+# Build progressbar string lengths
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+
+# 1.2 Build progressbar strings and print the ProgressBar line
+# 1.2.1 Output example:                           
+# 1.2.1.1 Progress : [########################################] 100%
+printf "\rProgress : [${_fill// /#}${_empty// /-}] ${_progress}%%"
+
+}
+################################################################
+################################################################
+
       #Check if input dir exists, else quit.
 DIR="${indir}"
 if [ -d "$DIR" ]; then
@@ -34,8 +64,14 @@ fi
 
     # check if files are there in input dir
 
+################################################################
+################################################################
+
+
 echo "Adding timestamp to all the images.";
 for file in $files ; do
+
+      ProgressBar ${number} ${_end}
       #retrieve date for timestamp and sanatize
   img_date=$(identify -format %[EXIF:DateTimeOriginal] "${file}");
 
@@ -60,7 +96,9 @@ for file in $files ; do
    -gravity "${gravity}" \
    -annotate "${annotate}" "${my_date}" \
    "${outdir}${datetime}_${inname}${output_format}";
+   ((number=number+1))
 done
+printf '\nadding timestamp is Finished!\n'
 
 # LICENSE
     ## CC BY-SA 4.0
