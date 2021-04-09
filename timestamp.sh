@@ -1,6 +1,6 @@
 #!/bin/bash
 
-font="Roboto"
+font="Ubuntu"
 pointsize="72"
 fill="white"
 gravity="SouthEast"
