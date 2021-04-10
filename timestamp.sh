@@ -1,7 +1,7 @@
 #!/bin/bash
 
 font="Ubuntu"
-pointsize="140"
+pointsize="180"
 fill="white"
 gravity="SouthEast"
 annotate="+100+100"
@@ -19,8 +19,6 @@ _start=1
 _end=100
 _end=${#files[@]}
 number=${_start}
-
-
 
 ################################################################
 ################################################################
