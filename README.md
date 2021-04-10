@@ -60,6 +60,12 @@ These scripts is using:
 1. https://stackoverflow.com/questions/38339434/making-simple-shell-progress-bar
 1. https://stackoverflow.com/questions/23630501/how-to-progress-bar-in-bash
 
+#### in regards to count files
+1. https://stackoverflow.com/questions/11307257/is-there-a-bash-command-which-counts-files
+
+#### in regards to seconds and minutes
+1. https://stackoverflow.com/questions/8903239/how-to-calculate-time-elapsed-in-bash-script
+
 ### On CODE
 #### in regards to Timestamp
 1.  https://ubuntuforums.org/showthread.php?t=1235238
