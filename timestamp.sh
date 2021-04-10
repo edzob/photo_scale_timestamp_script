@@ -16,16 +16,14 @@ files=$indir$photo
 
 _start_time=$SECONDS
 _start=1
-#_end=100 #_end=${#files[@]}
 _end=$(ls ${indir} -Uba1 | grep ${intput_format} | wc -l)
-
 counter=${_start}
 
 ################################################################
 ################################################################
-### from https://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script
-# 1. Create ProgressBar function
-# 1.1 Input is currentState($1) and totalState($2)
+      ### from https://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script
+      # 1. Create ProgressBar function
+      # 1.1 Input is currentState($1) and totalState($2)
 function ProgressBar {
       # Process data
   let _progress=(${1}*100/${2}*100)/100
@@ -40,6 +38,7 @@ function ProgressBar {
       # 1.2.1.1 Progress : [########################################] 100%
   printf "\rProgress : [${_fill// /#}${_empty// /-}] ${_progress}%% $((${_progress_time} / 60)) minutes and $((${_progress_time} % 60)) seconds"
 }
+
 ################################################################
 ################################################################
 
@@ -48,7 +47,7 @@ DIR="${indir}"
 if [ -d "$DIR" ]; then
    echo "'$DIR' found as input dir, please wait ..."
 else
-   echo "Warning: '$DIR' NOT found. Exit script.";
+   echo "Error: '$DIR' NOT found. Exit script.";
    exit 1;
 fi
 
@@ -57,19 +56,21 @@ DIR="${outdir}"
 if [ -d "$DIR" ]; then
    echo "'$DIR' found as output dir, please wait ..."
 else
-   echo "'$DIR' NOT found as output dir. Creating output dir.";
+   echo "Warning: '$DIR' NOT found as output dir. Creating output dir.";
    mkdir "$DIR";
 fi
 
     # check if files are there in input dir
+if [${_end}<1]; then
+  echo "Error: No files [${_end}] found in [${files}]."
+  exit 1;
+fi
 
 ################################################################
 ################################################################
 
-
-echo "Adding timestamp to all (${_end}) the images.";
+echo "Adding timestamp to all [${_end}] the images.";
 for file in $files ; do
-
   ProgressBar ${counter} ${_end}
       #retrieve date for timestamp and sanatize
   img_date=$(identify -format %[EXIF:DateTimeOriginal] "${file}");
@@ -97,9 +98,9 @@ for file in $files ; do
    "${outdir}${datetime}_${inname}${output_format}";
    ((counter=counter+1))
 done
-printf '\nadding timestamp is Finished!\n'
+printf '\nadding timestamp is finished!\n'
 run_time=$(($SECONDS - $_start_time))
-echo "This took $((${run_time} / 60)) minutes and $((${run_time} % 60)) seconds elapsed."
+echo "This took $((${run_time} / 60)) minutes and $((${run_time} % 60)) seconds."
 
 # LICENSE
     ## CC BY-SA 4.0

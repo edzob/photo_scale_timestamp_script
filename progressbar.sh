@@ -33,7 +33,7 @@ function ProgressBar {
 
 }
 
-echo "numer of files in [${files}] is [${_end}]"
+echo "Number of files in [${files}] is [${_end}]."
 
 # Proof of concept
 for number in $(seq ${_start} ${_end})
