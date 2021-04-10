@@ -1,7 +1,7 @@
 #!/bin/bash
 
 font="Ubuntu"
-pointsize="72"
+pointsize="140"
 fill="white"
 gravity="SouthEast"
 annotate="+100+100"
