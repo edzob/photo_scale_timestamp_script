@@ -66,13 +66,16 @@ fi
 
 echo "Scaling all [${_end}] the images.";
 for file in $files ; do
+  (
   ProgressBar ${counter} ${_end}
     #retrieve the filename of the image for the new filename
   inname=$(identify -format "%t" ${file});
     #scale file
   convert "${file}${scale}" -set filename:base "%[basename]" ${outdir}${inname}.png;
   ((counter=counter+1))
+  ) &
 done
+wait
 printf '\nscaling is finished!\n'
 run_time=$(($SECONDS - $_start_time))
 echo "This took $((${run_time} / 60)) minutes and $((${run_time} % 60)) seconds."
