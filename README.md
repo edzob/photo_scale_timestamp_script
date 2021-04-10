@@ -7,9 +7,13 @@ This is done via one of these scripts:
 
 These scripts is using:
 1. 'convert' and 'identify', which is part of 'imagemagick'.
-1. 'date' function/application.
-1. 'tr', 'echo', 'cut', which is part of bash.
 1. the font Roboto, which you can replace in the script by another.
+1. Part of every GNU ecosystem:
+  1. 'bash' (for running script).
+  1. 'date' function/application.
+  1. 'echo'  (for overal usage).
+  1. 'tr', 'cut'  (for date format).
+  1. 'grep', 'ls', 'wc' (for progressbar).
 
 ## Backlog
 1. count input files
@@ -21,6 +25,7 @@ These scripts is using:
 
 ## install
 - ```sudo apt install imagemagick```
+- ```sudo apt install parallel```
 
 ### test install 
 - ```convert logo: logo.gif```
@@ -65,6 +70,16 @@ These scripts is using:
 
 #### in regards to seconds and minutes
 1. https://stackoverflow.com/questions/8903239/how-to-calculate-time-elapsed-in-bash-script
+
+#### in regards to parrrel 
+1. https://stackoverflow.com/questions/29058741/need-to-cropresize-300000-files-runtime-4-days-how-can-i-speed-up-my-bash
+1. https://www.gnu.org/software/bash/manual/html_node/GNU-Parallel.html
+1. https://www.gnu.org/software/parallel/parallel_tutorial.html
+1. https://www.cyberciti.biz/faq/how-to-run-command-or-code-in-parallel-in-bash-shell-under-linux-or-unix/
+1. https://saveriomiroddi.github.io/Running-shell-commands-in-parallel-via-gnu-parallel
+1. https://unix.stackexchange.com/questions/103920/parallelize-a-bash-for-loop
+1. https://unix.stackexchange.com/questions/101632/running-thousands-of-curl-background-processes-in-parallel-in-bash-script
+1. https://unix.stackexchange.com/questions/575327/can-gnu-parallel-execute-a-bash-script-25000-times-per-seconds-and-parallel-proc
 
 ### On CODE
 #### in regards to Timestamp

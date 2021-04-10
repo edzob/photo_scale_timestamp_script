@@ -71,33 +71,36 @@ fi
 
 echo "Adding timestamp to all [${_end}] the images.";
 for file in $files ; do
-  ProgressBar ${counter} ${_end}
-      #retrieve date for timestamp and sanatize
-  img_date=$(identify -format %[EXIF:DateTimeOriginal] "${file}");
+  (
+    ProgressBar ${counter} ${_end}
+        #retrieve date for timestamp and sanatize
+    img_date=$(identify -format %[EXIF:DateTimeOriginal] "${file}");
 
-      #sanatize date and format for date funtion
-  date=$(echo ${img_date} | cut -d" " -f1 | tr ":" "-");
-  time=$(echo ${img_date} | cut -d" " -f2 );
-  img_date=$date" "$time;
+        #sanatize date and format for date funtion
+    date=$(echo ${img_date} | cut -d" " -f1 | tr ":" "-");
+    time=$(echo ${img_date} | cut -d" " -f2 );
+    img_date=$date" "$time;
 
-      #re-create date for the timestamp
-  my_date=$(date -d "${img_date}" +"%Y-%m-%d %H:%M");
+        #re-create date for the timestamp
+    my_date=$(date -d "${img_date}" +"%Y-%m-%d %H:%M");
 
-      #retrieve the date of the image for the new filename and sanatize
-  datetime=$(identify -format "%[EXIF:DateTimeOriginal]" "${file}" | tr " " "_" | tr ":" "-");
-  
-      #retrieve the filename of the image for the new filename
-  inname=$(identify -format "%t" "${file}");
+        #retrieve the date of the image for the new filename and sanatize
+    datetime=$(identify -format "%[EXIF:DateTimeOriginal]" "${file}" | tr " " "_" | tr ":" "-");
+    
+        #retrieve the filename of the image for the new filename
+    inname=$(identify -format "%t" "${file}");
 
-      #convert the image with timestamp to png
-  convert ${file} -font "${font}" \
-   -pointsize "${pointsize}" \
-   -fill "${fill}" \
-   -gravity "${gravity}" \
-   -annotate "${annotate}" "${my_date}" \
-   "${outdir}${datetime}_${inname}${output_format}";
-   ((counter=counter+1))
+        #convert the image with timestamp to png
+    convert ${file} -font "${font}" \
+     -pointsize "${pointsize}" \
+     -fill "${fill}" \
+     -gravity "${gravity}" \
+     -annotate "${annotate}" "${my_date}" \
+     "${outdir}${datetime}_${inname}${output_format}";
+     ((counter=counter+1)) 
+   ) &
 done
+wait
 printf '\nadding timestamp is finished!\n'
 run_time=$(($SECONDS - $_start_time))
 echo "This took $((${run_time} / 60)) minutes and $((${run_time} % 60)) seconds."
