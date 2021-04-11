@@ -1,8 +1,10 @@
 #!/bin/bash
 
 font="Ubuntu"
-pointsize="180"
-fill="white"
+pointsize="230"
+fill_color="white"
+stroke_color="black"
+stroke_width="5"
 gravity="SouthEast"
 annotate="+100+100"
 
@@ -71,7 +73,6 @@ fi
 
 echo "Adding timestamp to all [${_end}] the images.";
 for file in $files ; do
-  (
     ProgressBar ${counter} ${_end}
         #retrieve date for timestamp and sanatize
     img_date=$(identify -format %[EXIF:DateTimeOriginal] "${file}");
@@ -93,14 +94,14 @@ for file in $files ; do
         #convert the image with timestamp to png
     convert ${file} -font "${font}" \
      -pointsize "${pointsize}" \
-     -fill "${fill}" \
+     -fill "${fill_color}" \
+     -stroke "${stroke_color}" \
+     -strokewidth "${stroke_width}" \
      -gravity "${gravity}" \
      -annotate "${annotate}" "${my_date}" \
      "${outdir}${datetime}_${inname}${output_format}";
      ((counter=counter+1)) 
-   ) &
 done
-wait
 printf '\nadding timestamp is finished!\n'
 run_time=$(($SECONDS - $_start_time))
 echo "This took $((${run_time} / 60)) minutes and $((${run_time} % 60)) seconds."
