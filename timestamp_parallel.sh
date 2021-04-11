@@ -57,7 +57,13 @@ fi
 echo "Adding timestamp to all [${files_count}] the images.";
 
 
-find "${indir}" -name "*${intput_format}" | parallel -I% --max-args 1 timestamp_file.sh % "${font}" "${outdir}" "${output_format}"; 
+find "${indir}" -name "*${intput_format}" | \
+  parallel -I% \
+  --max-args 1 \
+  "./timestamp_file.sh" % \
+  "${font}" \
+  "${outdir}" \
+  "${output_format}"; 
 
 printf '\nadding timestamp is finished!\n'
 run_time=$(($SECONDS - $start_time))
