@@ -18,13 +18,19 @@ if [ -z "$FONT_INSTALLED" ]; then
     echo "The Roboto font is not currently installed.";
     FONT_INSTALLED=$(fc-list | grep -i "ubuntu");
     if [ -z "$FONT_INSTALLED" ]; then 
-    echo "The Ubuntu font is not currently installed.";
+      echo "The Ubuntu font is not currently installed.";
       font="Arial"
+      echo "Using the Arial font.";
+
     else
       font="Ubuntu";
+      echo "Using the Ubuntu font.";
+
     fi
 else
   font="Roboto";
+  echo "Using the Roboto font.";
+
 fi
 ################################################################
 ################################################################
@@ -65,7 +71,7 @@ find "${indir}" -name "*${intput_format}" | \
   "${outdir}" \
   "${output_format}"; 
 
-printf '\nadding timestamp is finished!\n'
+printf '\nAdding timestamp is finished!\n'
 run_time=$(($SECONDS - $start_time))
 echo "This took $((${run_time} / 60)) minutes and $((${run_time} % 60)) seconds."
 
