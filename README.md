@@ -1,9 +1,17 @@
 # Timestamp and scale all the images.
 
+These scripts write the time and date from the EXIF date of an image,
+as text onto that image, and scales the image into a smaller one.
+And this for a all the images in a dir.
+
+## Scripts
+
 This is done via one of these scripts:
-1. ***timestamp.sh***, to add a timestamp from the EXIF data to the image.
-1. ***timestamp-rescale.sh***, to scale an image into a smaller image.
-1. ***upload2google.sh***, to upload the dir to a specific google drive location.
+1. ***timestamp_files.sh***, to add a timestamp from the EXIF data to all the image in the input dir and write output to the output dir.
+1. ***timestamp_file.sh***, does the same as 'timestamp_files.sh', but only for 1 file and needs to be called with cli variables.
+1. ***timesstamp_parallel.sh***, does the same as 'timestamp_files.sh', but only in parallel in stead of sequential. Makes use of 'timestamp_file.sh'.
+1. ***timestamp-rescale.sh***, to scale all the images in the input dir into a smaller images in the output dir..
+1. ***combine-tiemstamp-rescale.sh***, runs first the timestamp and then the rescale.
 
 These scripts is using:
 1. 'convert' and 'identify', which is part of 'imagemagick'.
@@ -81,6 +89,7 @@ These scripts is using:
 1. https://unix.stackexchange.com/questions/101632/running-thousands-of-curl-background-processes-in-parallel-in-bash-script
 1. https://unix.stackexchange.com/questions/575327/can-gnu-parallel-execute-a-bash-script-25000-times-per-seconds-and-parallel-proc
 1. https://opensource.com/article/18/5/gnu-parallel
+1. https://www.youtube.com/playlist?list=PL284C9FF2488BC6D1
 
 ### On CODE
 #### in regards to Timestamp with imagemagick
