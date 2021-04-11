@@ -1,6 +1,19 @@
 #!/bin/bash
 
-font="Ubuntu"
+    # Setting FONT
+FONT_INSTALLED=$(fc-list | grep -i "roboto");
+if [ -z "$FONT_INSTALLED" ]; then 
+    echo "The Roboto font is not currently installed.";
+    FONT_INSTALLED=$(fc-list | grep -i "ubuntu");
+    if [ -z "$FONT_INSTALLED" ]; then 
+    echo "The Ubuntu font is not currently installed.";
+      font="Arial"
+    else
+      font="Ubuntu";
+    fi
+else
+  font="Roboto";
+fi
 pointsize="230"
 fill_color="white"
 stroke_color="black"
