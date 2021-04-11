@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./timestamp.sh;
+./timestamp_files.sh;
 ./rescale.sh;
 
 # LICENSE
