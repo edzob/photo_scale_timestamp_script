@@ -58,7 +58,7 @@ echo "Adding timestamp to all [${files_count}] the images.";
 
 
 find "${indir}" -name "*${intput_format}" | \
-  parallel -I% \
+  time parallel -I% \
   --max-args 1 \
   "./timestamp_file.sh" % \
   "${font}" \
