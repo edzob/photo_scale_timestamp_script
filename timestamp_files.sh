@@ -115,7 +115,7 @@ for file in $files ; do
      "${outdir}${datetime}_${inname}${output_format}";
      ((counter=counter+1)) 
 done
-printf '\nadding timestamp is finished!\n'
+printf '\nAdding timestamp is finished!\n'
 run_time=$(($SECONDS - $_start_time))
 echo "This took $((${run_time} / 60)) minutes and $((${run_time} % 60)) seconds."
 
