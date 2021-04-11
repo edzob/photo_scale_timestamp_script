@@ -56,7 +56,7 @@ else
 fi
 
     # check if files are there in input dir
-if [${_end}<1]; then
+if (( ${_end} < 1 )); then
   echo "Error: No files [${_end}] found in [${files}]."
   exit 1;
 fi
