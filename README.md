@@ -80,6 +80,7 @@ These scripts is using:
 1. https://unix.stackexchange.com/questions/103920/parallelize-a-bash-for-loop
 1. https://unix.stackexchange.com/questions/101632/running-thousands-of-curl-background-processes-in-parallel-in-bash-script
 1. https://unix.stackexchange.com/questions/575327/can-gnu-parallel-execute-a-bash-script-25000-times-per-seconds-and-parallel-proc
+1. https://opensource.com/article/18/5/gnu-parallel
 
 ### On CODE
 #### in regards to Timestamp with imagemagick
@@ -101,6 +102,7 @@ These scripts is using:
 ### on FONT
 1. https://askubuntu.com/questions/673615/imagemagick-convert-command-cannot-use-fonts
 1. https://legacy.imagemagick.org/Usage/fonts/
+1. https://codereview.stackexchange.com/questions/88516/bash-script-that-checks-if-font-is-installed-and-installs-it-if-necessary
 
 
 ### on Google drive
