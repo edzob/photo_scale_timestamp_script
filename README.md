@@ -82,14 +82,14 @@ These scripts is using:
 1. https://unix.stackexchange.com/questions/575327/can-gnu-parallel-execute-a-bash-script-25000-times-per-seconds-and-parallel-proc
 
 ### On CODE
-#### in regards to Timestamp
+#### in regards to Timestamp with imagemagick
 1.  https://ubuntuforums.org/showthread.php?t=1235238
 1. https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=20213
 1. https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=9155
 1. https://stackoverflow.com/questions/51922126/how-to-format-date-and-time-with-imagemagicks-identify-utility
 1. https://stackoverflow.com/questions/26654709/extract-exif-data-as-text-using-imagemagick
 
-#### in regards to Resize
+#### in regards to Resize with imagemagick
 1. https://stackoverflow.com/questions/8707694/batch-resize-images-into-new-folder-using-imagemagick
 1. https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width
 1. https://askubuntu.com/questions/1068850/resize-multiple-images-with-imagemagick-from-a-folder-to-other-and-keep-the-nam
@@ -100,6 +100,7 @@ These scripts is using:
 
 ### on FONT
 1. https://askubuntu.com/questions/673615/imagemagick-convert-command-cannot-use-fonts
+1. https://legacy.imagemagick.org/Usage/fonts/
 
 
 ### on Google drive
