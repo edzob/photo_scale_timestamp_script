@@ -7,7 +7,7 @@ indir="./photo_timestamp/"
 outdir="./photo_scaled/"
 files=$indir$photo
 
-scale="[300x]"
+scale="[350x]"
 
 _start_time=$SECONDS
 _start=1
