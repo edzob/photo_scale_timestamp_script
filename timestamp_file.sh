@@ -1,10 +1,10 @@
 #!/bin/bash
 font=$2
     # Setting annotate 
-pointsize="230"
+pointsize="235"
 fill_color="white"
 stroke_color="black"
-stroke_width="8"
+stroke_width="5"
 gravity="SouthEast"
 annotate="+100+100"
     #input file
@@ -23,12 +23,15 @@ file_timestamp=$(identify -format \
   "%[EXIF:DateTimeOriginal]" "${file}" | tr " " "_" | tr ":" "-");
 file_name=$(identify -format "%t" "${file}");
     #timestamp photo
-convert ${file} -font "${font}" -pointsize "${pointsize}" \
+convert ${file} \
+  -font "${font}" \
+  -pointsize "${pointsize}" \
   -fill "${fill_color}" \
   -stroke "${stroke_color}" \
   -strokewidth "${stroke_width}" \
   -gravity "${gravity}" \
-  -annotate "${annotate}" "${img_date_my}" \
+  -annotate "${annotate}" \
+  "${img_date_my}" \
   "${outdir}${file_timestamp}_${file_name}${output_format}";
 
 # LICENSE
