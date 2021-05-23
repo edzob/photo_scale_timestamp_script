@@ -3,6 +3,8 @@ font=$2
     # Setting annotate 
 pointsize="235"
 fill_color="white"
+fill_color="SeaGreen1"
+#23804f 
 stroke_color="black"
 stroke_width="5"
 gravity="SouthEast"
