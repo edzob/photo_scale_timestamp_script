@@ -24,10 +24,13 @@ These scripts is using:
   1. 'grep', 'ls', 'wc' (for progressbar).
 
 ## Backlog
-1. count input files
-1. count timestamped files
-1. count scaled files
-1. start, stop, duration time feedback
+1. [V] count input files
+1. [V] count timestamped files
+1. [V] count scaled files
+1. [V] start, stop, duration time feedback
+2. [-] optimize scale script to use parallelization
+3. [-] run renamejpg from the combine script on the input file directory
+4. [-] if scaled/timestamped dir are with files, by default rename dir (overwrite with cli flag)
 
 **You need to install imagemagick.**
 
